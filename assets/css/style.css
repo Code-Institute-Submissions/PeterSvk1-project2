@@ -10,8 +10,8 @@ body {
     font-family: 'Oswald', sans-serif;
 }
 
-/* bratislava pic */
-.logo {
+
+.logo .rules {
     max-width: 100%;
     position: center;
     max-height: 100%;
