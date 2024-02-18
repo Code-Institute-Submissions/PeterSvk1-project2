@@ -16,3 +16,6 @@ body {
     position: center;
     max-height: 100%;
 }
+.instructions {
+    text-align: center;
+}
