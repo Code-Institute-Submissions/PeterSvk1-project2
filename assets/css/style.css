@@ -36,3 +36,9 @@ body {
     margin-right: auto;
     padding: 1%;
 }
+footer {
+    text-align: center;
+    background-color: rgb(175, 220, 235);
+    padding: 1em;
+    width: 100%;
+}
