@@ -28,7 +28,7 @@ body {
     box-sizing: border-box;
     width: 90%;
     height: 700vh;
-    max-height: 800px;
+    max-height: 600px;
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
@@ -62,11 +62,11 @@ footer {
     width: 100%;
 }
 .controls{
-  display: flex;
-  justify-content: left;
-  flex-direction: column;
-  max-width: 100px;
-;
+    flex: auto;
+  width: auto;
+  margin-bottom: 20px;
+  
+  
 }
 .heading{
     text-align: center;
@@ -80,4 +80,19 @@ footer {
     background-color: aquamarine;
     width:180px;
     box-sizing: border-box;
+}
+.msgs {
+    margin-top: 20px;
+}
+.user {
+    float: left;
+width: 40%;
+}
+.npc{
+    float: right;
+    width: 40%;
+}
+
+.npc-pic, .user-pic{
+    width: 50;
 }
