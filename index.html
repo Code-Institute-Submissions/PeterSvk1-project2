@@ -26,34 +26,34 @@
     <h2 class>Choose:</h2>
     <div class="controls">
         
-        <button aria-label="rock" class="button btn-all green">
+        <button aria-label="rock" data-choice="0" class="button btn-all green">
             <i class="fa-solid fa-hand-back-fist"></i>
         </button>
-        <button aria-label="paper" class="button btn-all blue">
+        <button aria-label="paper" data-choice="0" class="button btn-all blue">
             <i class="fa-solid fa-toilet-paper"></i>
         </button>
-        <button aria-label="scissors" class="button btn-all orange">
+        <button aria-label="scissors" data-choice="0" class="button btn-all orange">
             <i class="fa-solid fa-hand-scissors"></i>
         </button>
-        <button aria-label="lizard" class="button btn-all red">
+        <button aria-label="lizard" data-choice="0" class="button btn-all red">
             <i class="fa-solid fa-hand-lizard"></i>
         </button>
-        <button aria-label="spock" class="button btn-all yellow">
+        <button aria-label="spock" data-choice="0" class="button btn-all yellow">
             <i class="fa-solid fa-hand-spock"></i>
         </button>
         
         
     </div>
-  <div class="score-area">
-    <p class="scores">Correct Answers <span id="score">0</span></p>
-    <p class="scores">Incorrect Answers <span id="incorrect">0</span></p>
-</div>
-  </div>
 
+  </div>
+  <div class="score-area">
+    <p class="scores">USER Win <span id="user">0</span></p>
+    <p class="scores">NPC Win <span id="npc">0</span></p>
+</div>
 
     <script src="assets/js/script.js"></script>
 
-    
+
 </body>
 <!--Footer area start -->
 <footer>
@@ -62,7 +62,6 @@
         target="_blank"
         rel="noopener"
         aria-label="Visit our Facebook page (opens in a new tab)"
-      >
       >Wiki</a></h2>
 
 </footer>

@@ -72,3 +72,12 @@ footer {
     text-align: center;
     font-size: 2.5rem;
 }
+.score-area{
+    margin: auto;
+    padding-left: 10px;
+    position: center;
+    font-size: 2rem;
+    background-color: aquamarine;
+    width:180px;
+    box-sizing: border-box;
+}
