@@ -1,6 +1,7 @@
-// Get necessary elements from the DOM
 const userScoreElement = document.getElementById('user');
 const npcScoreElement = document.getElementById('npc');
+const drawScoreElement = document.getElementById('draw');
+const triesLeftElement = document.getElementById('tries');
 const userChoiceText = document.getElementById('userChoiceText');
 const userChoiceWord = document.getElementById('userChoiceWord');
 const npcChoiceText = document.getElementById('npcChoiceText');
@@ -9,6 +10,8 @@ const buttons = document.querySelectorAll('.button');
 
 let userScore = 0;
 let npcScore = 0;
+let drawScore = 0;
+let tries = 5; // Initial number of tries
 
 // Function to generate NPC's choice
 function generateNPCChoice() {
@@ -19,9 +22,10 @@ function generateNPCChoice() {
 
 // Function to determine the winner
 function determineWinner(userChoice, npcChoice) {
-
     if (userChoice === npcChoice) {
         alert('Its a draw, try again');
+        drawScore++;
+        drawScoreElement.textContent = drawScore;
     } else if (
         (userChoice === 'rock' && (npcChoice === 'scissors' || npcChoice === 'lizard')) ||
         (userChoice === 'paper' && (npcChoice === 'rock' || npcChoice === 'spock')) ||
@@ -31,23 +35,45 @@ function determineWinner(userChoice, npcChoice) {
     ) {
         alert('Winner!');
         userScore++;
+        userScoreElement.textContent = userScore;
     } else {
         alert('You lose!');
         npcScore++;
+        npcScoreElement.textContent = npcScore;
     }
 
+    // Decrement the tries counter
+    tries--;
+    triesLeftElement.textContent = tries;
+
+    // Check if the maximum number of tries is reached
+    if (tries <= 0) {
+        alert('Game over! Max tries reached. Resetting the game.');
+        resetGame();
+    }
+}
+
+function resetGame() {
+    // Reset scores and tries
+    userScore = 0;
+    npcScore = 0;
+    drawScore = 0;
+    tries = 5;
+
+    // Update the DOM
     userScoreElement.textContent = userScore;
     npcScoreElement.textContent = npcScore;
+    drawScoreElement.textContent = drawScore;
+    triesLeftElement.textContent = tries;
 
-    userChoiceWord.textContent = userChoice;
-    npcChoiceWord.textContent = npcChoice;
-
+    userChoiceWord.textContent = '';
+    npcChoiceWord.textContent = '';
 }
+
 function handleButtonClick(event) {
     const userChoice = event.currentTarget.getAttribute('aria-label');
     const npcChoice = generateNPCChoice();
 
-   
     userChoiceWord.textContent = userChoice;
     npcChoiceWord.textContent = npcChoice;
 
@@ -56,7 +82,7 @@ function handleButtonClick(event) {
     setTimeout(() => {
         userChoiceWord.textContent = '';
         npcChoiceWord.textContent = '';
-    }, 2000); 
+    }, 2000);
 }
 
 // Add click event listeners to buttons
