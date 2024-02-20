@@ -94,4 +94,8 @@ text-align: center;
     width: 40%;
     text-align: center;
 }
-
+.button:active,
+.button:hover {
+    background-color: darkblue;
+    color: white;
+}
