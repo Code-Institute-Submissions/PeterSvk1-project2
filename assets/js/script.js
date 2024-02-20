@@ -20,12 +20,8 @@ function generateNPCChoice() {
 // Function to determine the winner
 function determineWinner(userChoice, npcChoice) {
 
-
-
-    // Compare userChoice and npcChoice, update scores, and display results
-    // For a simple example:
     if (userChoice === npcChoice) {
-        alert('It\'s a tie!');
+        alert('Its a draw, try again');
     } else if (
         (userChoice === 'rock' && (npcChoice === 'scissors' || npcChoice === 'lizard')) ||
         (userChoice === 'paper' && (npcChoice === 'rock' || npcChoice === 'spock')) ||
@@ -33,44 +29,34 @@ function determineWinner(userChoice, npcChoice) {
         (userChoice === 'lizard' && (npcChoice === 'spock' || npcChoice === 'paper')) ||
         (userChoice === 'spock' && (npcChoice === 'scissors' || npcChoice === 'rock'))
     ) {
-        alert('You win!');
+        alert('Winner!');
         userScore++;
     } else {
         alert('You lose!');
         npcScore++;
     }
 
-    // Update the score display
     userScoreElement.textContent = userScore;
     npcScoreElement.textContent = npcScore;
 
-    // Update the displayed choices
     userChoiceWord.textContent = userChoice;
     npcChoiceWord.textContent = npcChoice;
 
-    
-    // Reset user and NPC choices after displaying the results
-    setTimeout(() => {
-        userChoiceWord.textContent = '';
-        npcChoiceWord.textContent = '';
-    }, 2000); // Adjust the delay time as needed
 }
 function handleButtonClick(event) {
     const userChoice = event.currentTarget.getAttribute('aria-label');
     const npcChoice = generateNPCChoice();
 
-    // Display the choices
+   
     userChoiceWord.textContent = userChoice;
     npcChoiceWord.textContent = npcChoice;
 
-    // Determine the winner and update scores
     determineWinner(userChoice, npcChoice);
 
-    // Reset user and NPC choices after displaying the results
     setTimeout(() => {
         userChoiceWord.textContent = '';
         npcChoiceWord.textContent = '';
-    }, 2000); // Adjust the delay time as needed
+    }, 2000); 
 }
 
 // Add click event listeners to buttons
