@@ -19,11 +19,8 @@ function generateNPCChoice() {
 
 // Function to determine the winner
 function determineWinner(userChoice, npcChoice) {
-    // Check if the user has made a valid choice
-    if (!userChoice) {
-        alert('Please make a valid choice!');
-        return;
-    }
+
+
 
     // Compare userChoice and npcChoice, update scores, and display results
     // For a simple example:
@@ -50,15 +47,30 @@ function determineWinner(userChoice, npcChoice) {
     // Update the displayed choices
     userChoiceWord.textContent = userChoice;
     npcChoiceWord.textContent = npcChoice;
-}
 
-// Function to handle user clicks on buttons
+    
+    // Reset user and NPC choices after displaying the results
+    setTimeout(() => {
+        userChoiceWord.textContent = '';
+        npcChoiceWord.textContent = '';
+    }, 2000); // Adjust the delay time as needed
+}
 function handleButtonClick(event) {
-    const userChoice = event.target.getAttribute('data-choice');
+    const userChoice = event.currentTarget.getAttribute('aria-label');
     const npcChoice = generateNPCChoice();
+
+    // Display the choices
+    userChoiceWord.textContent = userChoice;
+    npcChoiceWord.textContent = npcChoice;
 
     // Determine the winner and update scores
     determineWinner(userChoice, npcChoice);
+
+    // Reset user and NPC choices after displaying the results
+    setTimeout(() => {
+        userChoiceWord.textContent = '';
+        npcChoiceWord.textContent = '';
+    }, 2000); // Adjust the delay time as needed
 }
 
 // Add click event listeners to buttons
