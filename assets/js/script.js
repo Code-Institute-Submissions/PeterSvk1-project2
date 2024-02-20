@@ -11,16 +11,14 @@ const buttons = document.querySelectorAll('.button');
 let userScore = 0;
 let npcScore = 0;
 let drawScore = 0;
-let tries = 5; // Initial number of tries
+let tries = 5; 
 
-// Function to generate NPC's choice
 function generateNPCChoice() {
     const choices = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
     const randomIndex = Math.floor(Math.random() * choices.length);
     return choices[randomIndex];
 }
 
-// Function to determine the winner
 function determineWinner(userChoice, npcChoice) {
     if (userChoice === npcChoice) {
         alert('Its a draw, try again');
@@ -33,11 +31,11 @@ function determineWinner(userChoice, npcChoice) {
         (userChoice === 'lizard' && (npcChoice === 'spock' || npcChoice === 'paper')) ||
         (userChoice === 'spock' && (npcChoice === 'scissors' || npcChoice === 'rock'))
     ) {
-        alert('Winner!');
+        alert('Winner');
         userScore++;
         userScoreElement.textContent = userScore;
     } else {
-        alert('You lose!');
+        alert('You lose');
         npcScore++;
         npcScoreElement.textContent = npcScore;
     }
@@ -46,21 +44,20 @@ function determineWinner(userChoice, npcChoice) {
     tries--;
     triesLeftElement.textContent = tries;
 
-    // Check if the maximum number of tries is reached
     if (tries <= 0) {
-        alert('Game over! Max tries reached. Resetting the game.');
+        alert('No more tries left');
         resetGame();
     }
 }
 
 function resetGame() {
-    // Reset scores and tries
+  
     userScore = 0;
     npcScore = 0;
     drawScore = 0;
     tries = 5;
 
-    // Update the DOM
+
     userScoreElement.textContent = userScore;
     npcScoreElement.textContent = npcScore;
     drawScoreElement.textContent = drawScore;
@@ -82,7 +79,7 @@ function handleButtonClick(event) {
     setTimeout(() => {
         userChoiceWord.textContent = '';
         npcChoiceWord.textContent = '';
-    }, 2000);
+    }, 3000);
 }
 
 // Add click event listeners to buttons
