@@ -87,12 +87,11 @@ footer {
 .user {
     float: left;
 width: 40%;
+text-align: center;
 }
 .npc{
     float: right;
     width: 40%;
+    text-align: center;
 }
 
-.npc-pic, .user-pic{
-    width: 50;
-}
