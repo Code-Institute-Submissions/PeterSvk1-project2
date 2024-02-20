@@ -19,7 +19,12 @@ function generateNPCChoice() {
 
 // Function to determine the winner
 function determineWinner(userChoice, npcChoice) {
-    // Implement your game logic here
+    // Check if the user has made a valid choice
+    if (!userChoice) {
+        alert('Please make a valid choice!');
+        return;
+    }
+
     // Compare userChoice and npcChoice, update scores, and display results
     // For a simple example:
     if (userChoice === npcChoice) {
@@ -49,7 +54,7 @@ function determineWinner(userChoice, npcChoice) {
 
 // Function to handle user clicks on buttons
 function handleButtonClick(event) {
-    const userChoice = event.target.getAttribute('aria-label');
+    const userChoice = event.target.getAttribute('data-choice');
     const npcChoice = generateNPCChoice();
 
     // Determine the winner and update scores
