@@ -1,7 +1,8 @@
 const userScoreElement = document.getElementById('user');
 const npcScoreElement = document.getElementById('npc');
+const userChoiceText = document.getElementById('userChoiceText');
+const npcChoiceText = document.getElementById('npcChoiceText');
 const buttons = document.querySelectorAll('.button');
-
 
 let userScore = 0;
 let npcScore = 0;
@@ -37,21 +38,22 @@ function determineWinner(userChoice, npcChoice) {
     // Update the score display
     userScoreElement.textContent = userScore;
     npcScoreElement.textContent = npcScore;
+
+    // Update the displayed choices
+    userChoiceText.textContent = userChoice;
+    npcChoiceText.textContent = npcChoice;
 }
 
 // Function to handle user clicks on buttons
 function handleButtonClick(event) {
     const userChoice = event.target.getAttribute('aria-label');
     const npcChoice = generateNPCChoice();
-    
-    // Display choices 
-    alert(`User chose: ${userChoice}\nNPC chose: ${npcChoice}`);
 
-    // Determine the winner and update scores
+    // Determine the winner and update scores hopefully
     determineWinner(userChoice, npcChoice);
 }
 
-// Add click event listeners to buttons
+// Added click event listeners to buttons
 buttons.forEach(button => {
     button.addEventListener('click', handleButtonClick);
 });
