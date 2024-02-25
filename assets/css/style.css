@@ -10,14 +10,17 @@ body {
     font-family: 'Oswald', sans-serif;
    
 }
+h2 {
+    text-align: center;
+}
 
 
-.logo,.rules {
+.logo {
     max-width: 100%;
-    position: center;
     max-height: 100%;
 }
 .instructions {
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
     max-width: 90%;
@@ -25,7 +28,9 @@ body {
 
 .game-area {
     background-color: #e2e9ed;
+    border-radius: 20px;
     box-sizing: border-box;
+    border: 5px solid;
     width: 90%;
     height: 700vh;
     max-height: 600px;
@@ -37,9 +42,7 @@ body {
 
 
 .btn-all {
-   /* letter-spacing:1px ;*/
     color: rgb(27, 14, 14);
-
     padding-top: 5px;
     padding-bottom: 5px;
     background-color: white;
@@ -74,26 +77,27 @@ footer {
     font-size: 2.5rem;
 }
 .score-area{
-    margin: auto;
-    padding-left: 10px;
-    position: center;
-    font-size: 2rem;
-    background-color: aquamarine;
-    width:180px;
-    box-sizing: border-box;
+    margin : auto;
+    padding-left : 10px;
+    font-size : 2rem;
+    background-color : rgb(170, 238, 215);
+    width : 180px;
+    box-sizing : border-box;
+    border : solid 5px;
 }
 .msgs {
-    margin-top: 20px;
+   
+    flex-direction: column;
 }
 .user {
     float: left;
 width: 40%;
-text-align: right;
+text-align: center;
 }
 .npc{
     float: right;
     width: 40%;
-    text-align: left;
+    text-align: center;
 }
 .button:active,
 .button:hover {

@@ -2,24 +2,22 @@ const userScoreElement = document.getElementById('user');
 const npcScoreElement = document.getElementById('npc');
 const drawScoreElement = document.getElementById('draw');
 const triesLeftElement = document.getElementById('tries');
-const userChoiceText = document.getElementById('userChoiceText');
-const userChoiceWord = document.getElementById('userChoiceWord');
-const npcChoiceText = document.getElementById('npcChoiceText');
-const npcChoiceWord = document.getElementById('npcChoiceWord');
+const userChoiceWord = document.getElementById('user-choice-word');
+const npcChoiceWord = document.getElementById('npc-choice-word');
 const buttons = document.querySelectorAll('.button');
 
 let userScore = 0;
 let npcScore = 0;
-let drawScore = 0;
+let drawScore = 0;  
 let tries = 5; 
 
-function generateNPCChoice() {
+function npcRandomChoice() {
     const choices = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
-    const randomIndex = Math.floor(Math.random() * choices.length);
-    return choices[randomIndex];
+    const random = Math.floor(Math.random() * choices.length);
+    return choices[random];
 }
 
-function determineWinner(userChoice, npcChoice) {
+function whoWon(userChoice, npcChoice) {
     if (userChoice === npcChoice) {
         alert('Its a draw, try again');
         drawScore++;
@@ -40,7 +38,7 @@ function determineWinner(userChoice, npcChoice) {
         npcScoreElement.textContent = npcScore;
     }
 
-    // Decrement the tries counter
+    
     tries--;
     triesLeftElement.textContent = tries;
 
@@ -64,19 +62,19 @@ function resetGameWithDelay() {
 
         userChoiceWord.textContent = '';
         npcChoiceWord.textContent = '';
-    }, 3000); // 5000 milliseconds (5 seconds)
+    }, 3000);
 }
 
 function handleButtonClick(event) {
     const userChoice = event.currentTarget.getAttribute('aria-label');
-    const npcChoice = generateNPCChoice();
+    const npcChoice = npcRandomChoice();
     console.log('User choice:', userChoice);
     console.log('NPC choice:', npcChoice);
 
     userChoiceWord.textContent = userChoice;
     npcChoiceWord.textContent = npcChoice;
 
-    determineWinner(userChoice, npcChoice);
+    whoWon(userChoice, npcChoice);
 
     setTimeout(() => {
         userChoiceWord.textContent = '';
