@@ -71,3 +71,12 @@ __Footer__
 - the live link can be found here https://petersvk1.github.io/project2/
 
 ## Credits
+- __Media__
+- picture for rules and and link for wiki was taken from [www.instructables.com](https://www.instructables.com/How-to-Play-Rock-Paper-Scissors-Lizard-Spock/)
+- Picture for a header was taken from google search and edited by me.
+- icons are used from https://kit.fontawesome.com/cd9b9e993c.js
+
+- __Content__
+- Game are was heavily inspired by project: https://github.com/PeterSvk1/Lovemath-Project which was teaching student how it works
+- another website which inspired me and gave me ideas how to work on project and start with java code https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+JSE_PAGPPF+2021_Q2/courseware/30137de05cd847d1a6b6d2c7338c4655/c3bd296fe9d643af86e76e830e1470dd/
+- game logic was inspired by this video: https://www.youtube.com/watch?v=Nb1YRElHVLc , 
