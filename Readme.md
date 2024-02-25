@@ -56,7 +56,18 @@ __Footer__
 ![hmtl](https://github.com/PeterSvk1/project2/blob/main/assets/readmePics/htmlvali.png)
 - __CSS__
 - no errors were reported 
-![hmtl](https://github.com/PeterSvk1/project2/blob/main/assets/readmePics/cssvali.png)
+![hmtl](https://github.com/PeterSvk1/project2/blob/main/assets/readmePics/cssVali.png)
 - __Java__
 - no errors were reported only warning were shown
-![hmtl](https://github.com/PeterSvk1/project2/blob/main/assets/readmePics/javavali.png)
+![hmtl](https://github.com/PeterSvk1/project2/blob/main/assets/readmePics/javaVali.png)
+## Unfixed bogs
+- No bugs left to fix
+
+## Deployment
+- This website was deployed to github pages using VScode. The steps are as follows:
+- in the github repository, navigate to the settings page
+- from the source section drop-down menu, select master branch 
+- once the master branch has been selected, the page provided to the completed website will be generated.
+- the live link can be found here https://petersvk1.github.io/project2/
+
+## Credits
