@@ -6,3 +6,8 @@ I hope users will enjoy this functionality and and find it relaxing to play, use
 
 ![Responsice Mockup](https://github.com/PeterSvk1/project2/blob/main/assets/readmePics/Screenshotgen.png)
 ## Features 
+### Existing Features
+- __Header__ 
+- Its located on the top of the website and shows name of the game: Rock, Paper,Scissors,Lizard,Spock. I used image file as a header and user can easily understand what game he is playing.
+- header has very good contrast with the background.
+![header](https://github.com/PeterSvk1/project2/blob/main/assets/images/logo.jpg)
