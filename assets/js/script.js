@@ -44,11 +44,11 @@ function whoWon(userChoice, npcChoice) {
 
     if (tries <= 0) {
         alert('No more tries left');
-        resetGameWithDelay();
+        resetGame();
     }
 }
 
-function resetGameWithDelay() {
+function resetGame() {
     setTimeout(() => {
         userScore = 0;
         npcScore = 0;
