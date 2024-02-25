@@ -34,14 +34,12 @@ body {
     margin-right: auto;
     padding: 1em;
 }
-.button {
-    width: 40px;
-    height: 40px;
-    letter-spacing: 1px;
-    color: rgb(27, 14, 14);
-}
+
 
 .btn-all {
+   /* letter-spacing:1px ;*/
+    color: rgb(27, 14, 14);
+
     padding-top: 5px;
     padding-bottom: 5px;
     background-color: white;
@@ -52,19 +50,22 @@ body {
     margin: 5px;
     transition: all 0.5s;
 }
+
+
 footer {
     position: relative;
     bottom: 0;
-   
     text-align: center;
     background-color: rgb(168, 227, 247);
     padding: 1em;
     width: 100%;
 }
 .controls{
-    flex: auto;
+    /*flex: auto;*/
+    text-align: center;
   width: auto;
   margin-bottom: 20px;
+  
   
   
 }
@@ -87,12 +88,12 @@ footer {
 .user {
     float: left;
 width: 40%;
-text-align: center;
+text-align: right;
 }
 .npc{
     float: right;
     width: 40%;
-    text-align: center;
+    text-align: left;
 }
 .button:active,
 .button:hover {

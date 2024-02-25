@@ -46,30 +46,32 @@ function determineWinner(userChoice, npcChoice) {
 
     if (tries <= 0) {
         alert('No more tries left');
-        resetGame();
+        resetGameWithDelay();
     }
 }
 
-function resetGame() {
-  
-    userScore = 0;
-    npcScore = 0;
-    drawScore = 0;
-    tries = 5;
+function resetGameWithDelay() {
+    setTimeout(() => {
+        userScore = 0;
+        npcScore = 0;
+        drawScore = 0;
+        tries = 5;
 
+        userScoreElement.textContent = userScore;
+        npcScoreElement.textContent = npcScore;
+        drawScoreElement.textContent = drawScore;
+        triesLeftElement.textContent = tries;
 
-    userScoreElement.textContent = userScore;
-    npcScoreElement.textContent = npcScore;
-    drawScoreElement.textContent = drawScore;
-    triesLeftElement.textContent = tries;
-
-    userChoiceWord.textContent = '';
-    npcChoiceWord.textContent = '';
+        userChoiceWord.textContent = '';
+        npcChoiceWord.textContent = '';
+    }, 3000); // 5000 milliseconds (5 seconds)
 }
 
 function handleButtonClick(event) {
     const userChoice = event.currentTarget.getAttribute('aria-label');
     const npcChoice = generateNPCChoice();
+    console.log('User choice:', userChoice);
+    console.log('NPC choice:', npcChoice);
 
     userChoiceWord.textContent = userChoice;
     npcChoiceWord.textContent = npcChoice;
@@ -79,10 +81,10 @@ function handleButtonClick(event) {
     setTimeout(() => {
         userChoiceWord.textContent = '';
         npcChoiceWord.textContent = '';
-    }, 3000);
+    }, 5000);
 }
 
-// Add click event listeners to buttons
+//event listeners to buttons
 buttons.forEach(button => {
     button.addEventListener('click', handleButtonClick);
 });
